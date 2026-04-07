@@ -19,7 +19,7 @@ const Movie = require("./models/movie");
 const User = require("./models/users");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/movieDB")
+  .connect(process.env.MONGO)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
