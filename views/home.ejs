@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineTrackr</title>
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css"> <!-- your global css -->
+
+  <style>
+    /* 🎬 Hero Section */
+    .home-hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .home-title {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .home-subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-top: 15px;
+    }
+
+    .home-btn {
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    /* 🎥 Right Side Poster Placeholder */
+    .hero-visual {
+      background: linear-gradient(135deg, #374151, #111827);
+      border-radius: 20px;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9ca3af;
+      font-size: 1.2rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* 🔥 Features */
+    .home-feature-card {
+      background: rgba(55, 65, 81, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 25px;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.05);
+      height: 100%;
+    }
+
+    .home-feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .home-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    .home-footer {
+      background: #111827;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- 🔥 Navbar (your partial ideally) -->
+<nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" href="/">🎬 CineTrackr</a>
+
+    <div class="ms-auto">
+      <% if(currentUser) { %>
+        <a href="/movies" class="btn btn-outline-custom me-2">Dashboard</a>
+        <a href="/logout" class="btn btn-primary-custom">Logout</a>
+      <% } else { %>
+        <a href="/login" class="btn btn-outline-custom me-2">Login</a>
+        <a href="/register" class="btn btn-primary-custom">Register</a>
+      <% } %>
+    </div>
+
+  </div>
+</nav>
+
+<!-- 🎬 Hero -->
+<section class="home-hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Left Content -->
+      <div class="col-md-6">
+
+        <h1 class="home-title">
+          Track Movies Like a Pro 🎥
+        </h1>
+
+        <p class="home-subtitle">
+          Save, rate, and organize your favorite movies in one place.
+          Never forget what you watched again.
+        </p>
+
+        <div class="mt-4">
+
+          <% if(!currentUser) { %>
+            <a href="/register" class="btn btn-primary-custom home-btn me-3">
+              Get Started
+            </a>
+            <a href="/login" class="btn btn-outline-custom home-btn">
+              Login
+            </a>
+          <% } else { %>
+            <a href="/movies" class="btn btn-primary-custom home-btn">
+              Go to Dashboard
+            </a>
+          <% } %>
+
+        </div>
+
+      </div>
+
+      <!-- Right Visual -->
+      <div class="col-md-6">
+        <div class="hero-visual">
+          🎬 Movie Posters Preview
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🔥 Features -->
+<section class="py-5">
+  <div class="container text-center">
+
+    <h2 class="fw-bold mb-5">Why CineTrackr?</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="home-feature-card">
+          <div class="home-icon">📌</div>
+          <h5 class="fw-bold">Save Movies</h5>
+          <p class="text-muted">Keep your personal movie collection organized.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="home-feature-card">
+          <div class="home-icon">⭐</div>
+          <h5 class="fw-bold">Rate & Review</h5>
+          <p class="text-muted">Add ratings and reviews easily.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="home-feature-card">
+          <div class="home-icon">🔒</div>
+          <h5 class="fw-bold">Private & Secure</h5>
+          <p class="text-muted">Your data stays completely private.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- 🔥 Footer -->
+<footer class="text-center py-3 home-footer">
+  <p class="mb-0">© 2026 CineTrackr | Built with ❤️</p>
+</footer>
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

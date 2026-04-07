@@ -1,0 +1,385 @@
+/* 🎨 Theme Variables */
+:root {
+  --bg-main: #1f2937;
+  --bg-dark: #111827;
+  --bg-card: #374151;
+  --bg-soft: #4b5563;
+
+  --accent: #f43f5e;
+  --accent-hover: #fb7185;
+
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
+}
+
+/* 🌌 Body */
+body {
+  background: linear-gradient(135deg, var(--bg-main), var(--bg-dark));
+  color: var(--text-main);
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+/* 🔥 Navbar */
+.custom-navbar {
+  background: rgba(31, 41, 55, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.navbar-brand {
+  color: var(--accent) !important;
+  font-size: 1.5rem;
+}
+
+/* Links */
+.nav-link {
+  color: #d1d5db !important;
+  font-weight: 500;
+  margin: 0 10px;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+/* Hover underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Logo */
+.nav-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Optional text */
+.nav-logo-text {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* 🔘 Buttons */
+.btn-primary-custom {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 18px;
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-outline-custom {
+  border: 1px solid #6b7280;
+  color: #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 18px;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--bg-soft);
+  border-color: var(--bg-soft);
+}
+
+/* 🔍 Search */
+.nav-search {
+  background: rgba(55, 65, 81, 0.7);
+  padding: 5px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--text-main);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  box-shadow: none;
+}
+
+/* 📄 Details Card */
+.details-card {
+  background: rgba(55, 65, 81, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* 🎥 Poster */
+.details-poster {
+  transition: 0.3s;
+}
+
+.details-poster:hover {
+  transform: scale(1.03);
+}
+
+/* 📝 Title */
+.details-title {
+  color: var(--text-main);
+}
+
+/* 📖 Plot */
+.details-plot {
+  line-height: 1.6;
+}
+
+/* 📊 Pills */
+.details-pill {
+  background: var(--bg-soft);
+  border: 1px solid rgba(255,255,255,0.05);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-main);
+}
+
+/* 🔘 Actions */
+.details-actions {
+  margin-top: 10px;
+}
+
+/* 🎬 Dashboard Card */
+.dashboard-card {
+  background: rgba(55, 65, 81, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* 🔝 Top */
+.dashboard-card-top {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.dashboard-movie-title {
+  max-width: 80%;
+  color: var(--text-main);
+}
+
+/* 👀 Badge */
+.dashboard-watched-badge {
+  background: var(--bg-soft);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* 🔻 Footer */
+.dashboard-card-footer {
+  margin-top: auto;
+}
+
+/* 📉 Muted text fix */
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Optional spacing */
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+
+
+
+/* 🔐 Auth Page */
+.auth-page {
+  min-height: 100vh;
+}
+
+/* 🧊 Card */
+.auth-card {
+  width: 400px;
+  background: rgba(55, 65, 81, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* 📝 Title */
+.auth-title {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Labels */
+.auth-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Inputs */
+.auth-input {
+  background: rgba(31, 41, 55, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text-main);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.auth-input::placeholder {
+  color: var(--text-muted);
+}
+
+.auth-input:focus {
+  background: rgba(31, 41, 55, 0.9);
+  border-color: var(--accent);
+  box-shadow: none;
+  color: var(--text-main);
+}
+
+/* Footer */
+.auth-footer-text {
+  color: var(--text-muted);
+}
+
+/* Link */
+.auth-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.auth-link:hover {
+  color: var(--accent-hover);
+}
+
+
+
+
+/* 🎬 Create Page */
+.create-page {
+  min-height: 100vh;
+}
+
+/* 🧊 Card */
+.create-card {
+  width: 420px;
+  background: rgba(55, 65, 81, 0.85);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* 📝 Title */
+.create-title {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* Labels */
+.create-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Inputs */
+.create-input {
+  background: rgba(31, 41, 55, 0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text-main);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.create-input::placeholder {
+  color: var(--text-muted);
+}
+
+.create-input:focus {
+  background: rgba(31, 41, 55, 0.9);
+  border-color: var(--accent);
+  box-shadow: none;
+  color: var(--text-main);
+}
+
+
+/* 📍 Position */
+.flash-container {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 9999;
+  width: 320px;
+}
+
+/* 🔥 Base Alert Override */
+.custom-alert {
+  background: rgba(55, 65, 81, 0.9);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text-main);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  animation: slideIn 0.3s ease;
+}
+
+/* ✅ Success */
+.alert-success.custom-alert {
+  border-left: 4px solid #22c55e;
+  color: #4ade80;
+}
+
+/* ❌ Error */
+.alert-danger.custom-alert {
+  border-left: 4px solid #f43f5e;
+  color: #fb7185;
+}
+
+/* Close button fix */
+.btn-close {
+  filter: invert(1);
+}
+
+/* 🎬 Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
